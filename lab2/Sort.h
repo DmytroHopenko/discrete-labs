@@ -1,0 +1,12 @@
+#ifndef SORT_H
+#define SORT_H
+
+typedef int datatype;
+
+void minMaxValue(datatype* array, int start, int end);
+void sortBubble(datatype* array, int start, int end);
+void sortInsertion(datatype* array, int start, int end);
+void sortSelection(datatype* array, int start, int end);
+void printSortedArray(datatype* array, int size);
+
+#endif //SORT_H
