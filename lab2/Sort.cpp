@@ -6,6 +6,12 @@
 
 using namespace std;
 
+void customSwap(datatype& a, datatype& b) {
+    datatype temp = a;
+    a = b;
+    b = temp;
+}
+
 void minMaxValue(datatype* array, int start, int end) {
     datatype min = array[start], max = array[start];
 
@@ -24,7 +30,7 @@ void sortBubble(datatype* array, int start, int end) {
         swaped = false;
         for (int j = start; j < end-(i-start); j++) {
             if (array[j] > array[j+1]) {
-                swap(array[j], array[j+1]);
+                customSwap(array[j], array[j+1]);
                 swaped = true;
             }
         }
@@ -59,7 +65,7 @@ void sortSelection(datatype* array, int start, int end) {
             if (array[j] < array[minIndex]) minIndex = j;
         }
 
-        swap(array[i], array[minIndex]);
+        customSwap(array[i], array[minIndex]);
     }
 
     minMaxValue(array, start, end+1);
