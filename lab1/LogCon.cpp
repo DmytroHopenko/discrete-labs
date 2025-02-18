@@ -18,15 +18,15 @@ bool AND (bool a, bool b) {
 }
 
 bool OR (bool a, bool b) {
-    if (a) return true;
+    if (a == true) return true;
 
-    if (b) return true;
+    if (b == true) return true;
 
     return false;
 }
 
 bool IMP(bool a, bool b) {
-    if (a) {
+    if (a == true) {
         if (b == false) return false;
     }
 
@@ -34,7 +34,8 @@ bool IMP(bool a, bool b) {
 }
 
 bool EQU(bool a, bool b) {
-    if (a == b) return true;
+    if (a == true && b == true) return true;
+    if (a == false && b == false) return true;
 
     return false;
 }
@@ -42,10 +43,10 @@ bool EQU(bool a, bool b) {
 
 bool XOR (bool a, bool b) {
     if (a == false) {
-        if(b) return true;
+        if(b == true) return true;
     }
 
-    if (a) {
+    if (a == true) {
         if (b == false) return true;
     }
 

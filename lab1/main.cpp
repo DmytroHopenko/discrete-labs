@@ -3,55 +3,30 @@
 using namespace std;
 
 int main() {
+
     cout << "a\tb\t!a\ta&b\ta|b\ta->b\ta~b\ta^b\n";
 
-    cout << "1\t1\t";
-    cout << NOT(true) << "\t" << AND(true, true) << "\t";
-    cout << OR(true, true) << "\t" << IMP(true, true) << "\t";
-    cout << EQU(true, true) << "\t" << XOR(true, true) << "\n";
-
-    cout << "1\t0\t";
-    cout << NOT(true) << "\t" << AND(true, false) << "\t";
-    cout << OR(true, false) << "\t" << IMP(true, false) << "\t";
-    cout << EQU(true, false) << "\t" << XOR(true, false) << "\n";
-
-    cout << "0\t1\t";
-    cout << NOT(false) << "\t" << AND(false, true) << "\t";
-    cout << OR(false, true) << "\t" << IMP(false, true) << "\t";
-    cout << EQU(false, true) << "\t" << XOR(false, true) << "\n";
-
-    cout << "0\t0\t";
-    cout << NOT(false) << "\t" << AND(false, false) << "\t";
-    cout << OR(false, false) << "\t" << IMP(false, false) << "\t";
-    cout << EQU(false, false) << "\t" << XOR(false, false) << "\n";
+    for (int i = 1; i >= 0; i--) {
+        for (int j = 0; j <= 1; j++) {
+            cout << i << "\t" << j << "\t";
+            cout << NOT(i) << "\t" << AND(i, j) << "\t";
+            cout << OR(i, j) << "\t" << IMP(i, j) << "\t";
+            cout << EQU(i, j) << "\t" << XOR(i, j) << "\n";
+        }
+    }
 
     cout << endl;
 
     cout << "a\tb\tc\t((a & b) | c) = (c & !a)\n";
 
-    cout << "1\t1\t1\t";
-    cout << F5(true, true, true) << "\n";
+    for (int i = 1; i >= 0; i--) {
+        for (int j = 1; j >= 0; j--) {
+            for (int c = 1; c >= 0; c--) {
+                cout << i << "\t" << j << "\t" << c << "\t" <<  F5(i, j, c) << "\n";
+            }
 
-    cout << "1\t1\t0\t";
-    cout << F5(true, true, false) << "\n";
-
-    cout << "1\t0\t1\t";
-    cout << F5(true, false, true) << "\n";
-
-    cout << "1\t0\t0\t";
-    cout << F5(true, false, false) << "\n";
-
-    cout << "0\t1\t1\t";
-    cout << F5(false, true, true) << "\n";
-
-    cout << "0\t1\t0\t";
-    cout << F5(false, true, false) << "\n";
-
-    cout << "0\t0\t1\t";
-    cout << F5(false, false, true) << "\n";
-
-    cout << "0\t0\t0\t";
-    cout << F5(false, false, false) << "\n";
+        }
+    }
 
     return 0;
 }
