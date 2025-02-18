@@ -1,25 +1,34 @@
 #include "LogCon.h"
 
 bool NOT(bool a) {
-    if (!a) return true;
+    if (a == true) {
+        return false;
+    }
 
-    return false;
+    return true;
 }
 
 bool AND (bool a, bool b) {
-    if (a && b) return true;
-
+    if (a == true) {
+        if (b == true) {
+            return true;
+        }
+    }
     return false;
 }
 
 bool OR (bool a, bool b) {
-    if (a || b) return true;
+    if (a) return true;
+
+    if (b) return true;
 
     return false;
 }
 
 bool IMP(bool a, bool b) {
-    if (a && !b) return false;
+    if (a) {
+        if (b == false) return false;
+    }
 
     return true;
 }
@@ -32,7 +41,13 @@ bool EQU(bool a, bool b) {
 
 
 bool XOR (bool a, bool b) {
-    if ((!a && b) || (a && !b)) return true;
+    if (a == false) {
+        if(b) return true;
+    }
+
+    if (a) {
+        if (b == false) return true;
+    }
 
     return false;
 }
