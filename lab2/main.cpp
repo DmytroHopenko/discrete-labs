@@ -4,10 +4,14 @@
 using namespace std;
 
 int main() {
-    datatype arr[] = {5, 4, 12, 2, 1, 85};
+    datatype arr[] = {5, 4, 12, 2, 1, 85, 0, 77, 7};
     int sizeOfArray = size(arr);
-    cout << sizeOfArray << endl;
     int methodId, start, end;
+
+    cout << "Array to sort: ";
+    printArray(arr, sizeOfArray);
+
+    cout << endl;
 
     cout << "To start choose one of sorting with ID: \n";
     cout << "1. - Bubble method \n";
@@ -25,7 +29,8 @@ int main() {
             cin >> end;
 
             sortBubble(arr, start, end-1);
-            printSortedArray(arr, sizeOfArray);
+            cout << "Sorted array: ";
+            printArray(arr, sizeOfArray);
             break;
         case 2:
             cout << "Enter point of sorting start: ";
@@ -35,7 +40,8 @@ int main() {
             cin >> end;
 
             sortInsertion(arr, start, end-1);
-            printSortedArray(arr, sizeOfArray);
+            cout << "Sorted array: ";
+            printArray(arr, sizeOfArray);
 
             break;
         case 3:
@@ -46,7 +52,8 @@ int main() {
             cin >> end;
 
             sortSelection(arr, start, end-1);
-            printSortedArray(arr, sizeOfArray);
+            cout << "Sorted array: ";
+            printArray(arr, sizeOfArray);
 
             break;
         default:
