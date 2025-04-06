@@ -50,3 +50,17 @@ void GenPerm(datatype* A, int n) {
 
     sort(A + i + 1, A + n);
 }
+
+void GenComb(datatype *A, int n, int k) {
+    int i = k - 1;
+    while (i >= 0 && A[i] == n - k + i + 1) {
+        i--;
+    }
+
+    if (i >= 0) {
+        A[i]++;
+        for (int j = i + 1; j < k; j++) {
+            A[j] = A[j - 1] + 1;
+        }
+    }
+}

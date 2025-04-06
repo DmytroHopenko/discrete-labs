@@ -5,9 +5,6 @@
 using namespace std;
 
 int main() {
-    datatype arr[] = {5, 4, 12, 2, 1, 85, 0, 77, 7};
-    int sizeOfArray = size(arr);
-
     // Task 1
 
     int n, k;
@@ -35,7 +32,6 @@ int main() {
     long long totalPermutations = factorial(n2);
 
     cout << "All permutations in lexicographic order:\n";
-
     printArray(A, n2);
     cout << endl;
 
@@ -47,10 +43,31 @@ int main() {
 
     delete[] A;
 
+    // Task 3
+
+    int n3, k3;
+    cout << "Enter n3 and k3: ";
+    cin >> n3 >> k3;
+
+    int* A2 = new int[k3];
+
+    for (int i = 0; i < k3; ++i) {
+        A2[i] = i + 1;
+    }
+
+    long long totalCombinations = C(n3, k3);
+
+    cout << "All combinations in lexicographic order:\n";
+    printArray(A2, k3);
+    cout << endl;
+
+    for (long long i = 1; i < totalCombinations; ++i) {
+        GenComb(A2, n3, k3);
+        printArray(A2, k3);
+        cout << endl;
+    }
+
+    delete[] A2;
+
     return 0;
 }
-
-// TIP See CLion help at <a
-// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
-//  Also, you can try interactive lessons for CLion by selecting
-//  'Help | Learn IDE Features' from the main menu.

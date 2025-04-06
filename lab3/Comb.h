@@ -10,5 +10,6 @@ long long C(int n, int k);
 long long _C(int n, int k);
 
 void GenPerm(datatype* A, int n);
+void GenComb(datatype* A, int n, int k);
 
 #endif //COMB_H
